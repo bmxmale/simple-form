@@ -46,7 +46,7 @@ ddev exec bin/console doctrine:migrations:migrate
 
 ### Krok 3: Dostęp do aplikacji
 
-Aplikacja będzie dostępna pod adresem: [http://simple-form.ddev.site/](http://simple-form.ddev.site/)
+Aplikacja będzie dostępna pod adresem: [https://simple-form.ddev.site/](https://simple-form.ddev.site/)
 
 ## Dodawanie formularza
 
@@ -64,7 +64,7 @@ Aplikacja będzie dostępna pod adresem: [http://simple-form.ddev.site/](http://
 
 ## Podgląd wysłanych formularzy
 
-1. Przejdź do strony administracyjnej, używając odpowiedniego tokenu administracyjnego w URL, np. `http://simple-form.ddev.site/admin/{token}`.
+1. Przejdź do strony administracyjnej, używając odpowiedniego tokenu administracyjnego w URL, np. `https://simple-form.ddev.site/admin/{token}`.
 2. Na stronie administracyjnej zobaczysz listę przesłanych formularzy, zawierającą następujące kolumny:
    - ID
    - Imię
