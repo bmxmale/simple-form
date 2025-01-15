@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin - Lista danych{% endblock %}
+
+{% block body %}
+    <h1 class="text-2xl">Lista przesłanych formularzy</h1>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
+            <tr>
+                <th scope="col" class="px-6 py-3">ID</th>
+                <th scope="col" class="px-6 py-3">Imię</th>
+                <th scope="col" class="px-6 py-3">Nazwisko</th>
+                <th scope="col" class="px-6 py-3">Załącznik</th>
+                <th scope="col" class="px-6 py-3">Data utworzenia</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for input in simpleFormInputs %}
+                <tr class="bg-white border-b hover:bg-gray-50">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                        {{ input.id }}
+                    </th>
+                    <td class="px-6 py-4">
+                        {{ input.name }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ input.lastname }}
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="{{ path('admin_download_attachment', {id: input.id}) }}" class="text-blue-500 hover:underline">{{ input.attachmentFilename|default('Pobierz') }}</a>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        {{ input.createdAt|date('Y-m-d H:i:s')|default('-') }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

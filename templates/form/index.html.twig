@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formularz danych{% endblock %}
+
+{% block body %}
+    <h1 class="text-2xl">Formularz danych</h1>
+    <div {{ stimulus_controller('form') }} {{ stimulus_target('messages') }} >
+        <div id="messages" class="m-5" {{ stimulus_target('form', 'messages') }}>
+            {{ include('_flash.html.twig') }}
+        </div>
+
+        {{ form_start(form, { 'attr': { 'data-action': 'form#submit', 'data-form-target': 'form', 'action': path('app_simply_form_submit') } }) }}
+        <div class="mb-5">
+            {{ form_row(form.name) }}
+        </div>
+        <div class="mb-5">
+            {{ form_row(form.lastname) }}
+        </div>
+        <div class="mb-5">
+            {{ form_row(form.attachment) }}
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
